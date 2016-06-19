@@ -12,7 +12,7 @@ public class NavController {
 	
 	
 		@RequestMapping("/")
-		protected ModelAndView handleRequestInternal1(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
+		protected ModelAndView landingPage(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
 		
 			ModelAndView modelandview=new ModelAndView("Landing_Page");
 			
@@ -22,9 +22,9 @@ public class NavController {
 		}
 
 		
-		@RequestMapping("/About_Us")
-		protected ModelAndView handleRequestInternal(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
-			ModelAndView modelandview=new ModelAndView("About_Us");
+		@RequestMapping("/About_us")
+		protected ModelAndView aboutUs(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
+			ModelAndView modelandview=new ModelAndView("About_us");
 			
 			return modelandview;
 			
@@ -39,6 +39,13 @@ public class NavController {
 		@RequestMapping("/Sign_up")
 		protected ModelAndView signUp(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
 			ModelAndView modelandview=new ModelAndView("Sign_up");
+			
+			return modelandview;
+			
+		}
+		@RequestMapping("/Products")
+		protected ModelAndView products(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
+			ModelAndView modelandview=new ModelAndView("Products");
 			
 			return modelandview;
 			

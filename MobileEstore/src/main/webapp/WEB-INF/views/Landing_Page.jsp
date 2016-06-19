@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" isElIgnored="false"%>
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -9,11 +9,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--Link to bootstrap css should first and then followed by link to our own css-->
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <!--First Look for the bootstrap css online if not present then use the below link-->
-        <link rel="stylesheet" href="/bootstrap-3.3.6-dist/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="/CSS/css_Landing_Page.css" >
         <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!--First Look for the bootstrap css online if not present then use the below link-->              
         <link rel="stylesheet" type="text/css" href=/resources/bootstrap-3.3.6-dist/css/bootstrap.min.css  >
         <link rel="stylesheet" type="text/css" href=/resources/CSS/css_Landing_Page.css >
     </head>
@@ -30,8 +27,8 @@
                 <div class="colapse navbar-collapse navHeaderCollapse">
                     <ul class="nav navbar-nav navbar-right">
                        <!-- <li class="active"><a href="E:/Landing_page.html">Home</a></li> --> 
-                        <li><a href="#">Products</a></li>
-                        <li><a href="${session.getContextPath()}/MoibileEstore/About_Us">About Us</a></li>
+                        <li><a href="${session.getContextPath()}/MobileEstore/Products">Products</a></li>
+                        <li><a href="${session.getContextPath()}/MobileEstore/About_us">About Us</a></li>
                         <li><a href="${session.getContextPath()}/MobileEstore/Sign_in">Sign In</a></li>
                         <li><a href="${session.getContextPath()}/MobileEsotre/Sign_up">Sign Up</a></li>
                         <!--<li class="dropdown"><button class=dropdown-toggle data-toggel="dorpdown">Social Media</a>
@@ -58,16 +55,16 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                <img class="img" src="<c:url value="/resources/images/apple1.jpg" />" alt="apple1.jpg" />
+                <img class="img" src="<c:url value="resources/imgs/apple1.jpg" />" alt="apple1.jpg" />
                 </div>
                 <div class="item">
-                <img class="img" src="<c:url value="/resources/images/apple2.png" />" alt="apple2.png" />
+                <img class="img" src="<c:url value="/resources/imgs/apple2.png" />" alt="apple2.png" />
                 </div>
                 <div class="item">
-                <img class="img" src="<c:url value="/resources/images/htc.jpg" />" alt="htc.jpg" />
+                <img class="img" src="<c:url value="/resources/imgs/htc.jpg" />" alt="htc.jpg" />
                 </div>
                 <div class="item">
-                <img class="img" src="<c:url value="/resources/images/nokia.jpg" />" alt="nokia.jpg" />
+                <img class="img" src="<c:url value="/resources/imgs/nokia.jpg" />" alt="nokia.jpg" />
                 </div>
                 </div>
                 <!-- Left and right controls -->
