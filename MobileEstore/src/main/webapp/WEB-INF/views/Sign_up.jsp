@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <html>
     <head>
         <title>Form</title>
@@ -12,10 +12,10 @@
  <body>
   <div clas="container">
    <div clas="row">
-    <form name="form1" , role="form" >
+    <form:form name="form1" , role="form" action="" method="post" >
      <div class = "form-group">
        
-      <label for = "name">Enter Your Email Address:</label>
+      <label for = "name" action=>Enter Your Email Address:</label>
       <input type = "text" class = "form-control" id = "usr" placeholder = "Email">
    </div>
         <div class = "form-group">
@@ -34,7 +34,7 @@
         
       </div>
         <button type="submit" class="btn btn-primary">Sign Up</button>
-       </form>
+       </form:form>
       </div>
      </div>
     </body>

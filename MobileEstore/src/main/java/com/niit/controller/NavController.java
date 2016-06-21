@@ -43,13 +43,7 @@ public class NavController {
 			return modelandview;
 			
 		}
-		@RequestMapping("/Products")
-		protected ModelAndView products(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
-			ModelAndView modelandview=new ModelAndView("Products");
-			
-			return modelandview;
-			
-		}
+		
 		
 
 	}
