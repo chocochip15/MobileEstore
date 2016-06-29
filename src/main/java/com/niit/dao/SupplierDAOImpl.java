@@ -27,10 +27,11 @@ public class SupplierDAOImpl implements SupplierDAO {
 	@Transactional
 	public List<Supplier> list() {
 		@SuppressWarnings("unchecked")
-		List<Supplier> list = (List<Supplier>) sessionFactory.getCurrentSession()
-				.createCriteria(Supplier.class)
+		List<Supplier> list = (List<Supplier>) sessionFactory.getCurrentSession().createQuery("from Supplier").getResultList();
+		
+		/*.createCriteria(Supplier.class)
 				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-
+*/
 		return list;
 	}
 

@@ -47,7 +47,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 	@Transactional
 	public Category get(String id) {
-		String hql = "from Category where id=" + id;
+		String hql = "from Category where CATEGORY_ID=" + id;
 		@SuppressWarnings("deprecation")
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		

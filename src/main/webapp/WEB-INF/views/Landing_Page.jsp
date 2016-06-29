@@ -10,6 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--Link to bootstrap css should first and then followed by link to our own css-->
         <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
         <!--First Look for the bootstrap css online if not present then use the below link-->              
         <link rel="stylesheet" type="text/css" href="<c:url value="/resources/bootstrap-3.3.6-dist/css/bootstrap.min.css" />" />
         <link rel="stylesheet" type="text/css" href="<c:url value="/resources/CSS/css_Landing_Page.css" />" />
@@ -129,7 +130,7 @@
 										<label>Phone</label><input class="form-control phone"
 											placeholder="999-999-9999" data-placement="top"
 											data-trigger="manual"
-											data-content="Must be a valid phone number (999-999-9999)"
+											data-content="Must be a valid 10 digit phone number (999-999-9999)"
 											type="text">
 									</div>
 									<div class="form-group">
@@ -154,13 +155,13 @@
                     <div class="col-sm-2">
                         <h6>Follow Us on</h6>
                         <ul class="list-unstyled">
-                        <li>Facebook</li>
-                        <li>Twitter</li>
-                        <li>Google+</li>
+                        <li><a href="www.facebook.com" class="fa fa-facebook-official"></a> Facebook</li>
+                        <li><a href="www.twitter.com" class="fa fa-twitter-square"></a> Twitter</li>
+                        <li><a href="www.googleplus.com" class="fa fa-google-plus-square"></a> Google+</li>
                         </ul> 
                     </div>
                     <div class="col-sm-4">
-                        <h5>Diffrent Mobile Devices For you with our <span class="glyphicon glyphicon-heart"></span></h5>
+                        <h5>Different Mobile Devices For you with our <span class="glyphicon glyphicon-heart"></span></h5>
                     </div>
                 </div>
             </div>
