@@ -30,7 +30,7 @@
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-orm</artifactId>
-    <version>4.3.0.RELEASE</version>
+    <version>4.2.5.RELEASE</version>
 </dependency>
   
   <dependency>
@@ -54,8 +54,35 @@
 <dependency>
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-core</artifactId>
-    <version>5.2.0.Final</version>
+    <version>4.0.1.Final</version>
 </dependency>
+
+
+<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.0-api -->
+<dependency>
+    <groupId>org.hibernate.javax.persistence</groupId>
+    <artifactId>hibernate-jpa-2.0-api</artifactId>
+    <version>1.0.1.Final</version>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/javax.persistence/persistence-api -->
+<dependency>
+    <groupId>javax.persistence</groupId>
+    <artifactId>persistence-api</artifactId>
+    <version>1.0.2</version>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
+<dependency>
+    <groupId>javax.inject</groupId>
+    <artifactId>javax.inject</artifactId>
+    <version>1</version>
+</dependency>
+
+
+
 <!-- Apache database connection pool -->
 <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
 <!-- <dependency>

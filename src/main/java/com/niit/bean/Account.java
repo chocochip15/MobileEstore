@@ -1,5 +1,7 @@
 package com.niit.bean;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="ACCOUNT")
-public class Account 
+public class Account implements Serializable
 {
 	@Id
 	@Column(name="ACC_ID")

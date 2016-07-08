@@ -1,12 +1,14 @@
 package com.niit.bean;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
 @Table(name="CATEGORY")
-public class Category {
+public class Category implements Serializable {
 	@Id
 	@Column(name="CATEGORY_ID")
 	private String categoryId;

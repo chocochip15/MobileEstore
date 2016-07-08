@@ -1,4 +1,4 @@
-package com.niit.services;
+/*package com.niit.services;
 
 import java.util.List;
 
@@ -13,12 +13,17 @@ import com.niit.dao.SupplierDAOImpl;
 
 
 @Service
+@Transactional
 public class SupplierService {
 	private SupplierDAOImpl supplierDAOImpl ;
 @Autowired
 	public SupplierService(SupplierDAOImpl supplierDAOImpl) {
 		this.supplierDAOImpl = supplierDAOImpl;
 	}
+
+public void setSupplierDAOImpl(SupplierDAOImpl supplierDAOImpl) {
+	this.supplierDAOImpl = supplierDAOImpl;
+}
 
 @Transactional
 public List<Supplier> list() {
@@ -30,3 +35,4 @@ public List<Supplier> list() {
 }
 
 
+*/

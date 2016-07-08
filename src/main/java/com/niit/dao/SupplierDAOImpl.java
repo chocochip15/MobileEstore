@@ -1,4 +1,4 @@
-package com.niit.dao;
+/*package com.niit.dao;
 
 import java.util.List;
 
@@ -12,44 +12,49 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.bean.Supplier;
 
-@Repository("supplierDAO")
+@Repository("supplierDAOImpl")
 public class SupplierDAOImpl implements SupplierDAO {
 	
 
-	@Autowired
+
 	private SessionFactory sessionFactory;
 
-
+	@Autowired
 	public SupplierDAOImpl(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
 
-	@Transactional
+	
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+
 	public List<Supplier> list() {
 		@SuppressWarnings("unchecked")
-		List<Supplier> list = (List<Supplier>) sessionFactory.getCurrentSession().createQuery("from Supplier").getResultList();
+		List<Supplier> list = (List<Supplier>) sessionFactory.getCurrentSession().createQuery("from Supplier").list();
 		
-		/*.createCriteria(Supplier.class)
+		.createCriteria(Supplier.class)
 				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-*/
+
 		return list;
 	}
 
-	@Transactional
+	
 	public void saveOrUpdate(Supplier supplier) {
 		sessionFactory.getCurrentSession().saveOrUpdate(supplier);
 	}
 
-	@Transactional
+	
 	public void delete(String id) {
 		Supplier supplier = new Supplier();
 		supplier.setId(id);
 		sessionFactory.getCurrentSession().delete(supplier);
 	}
 
-	@Transactional
+	
 	public Supplier get(String id) {
-		String hql = "from Supplier where id=" + id;
+		String hql = "from Supplier where id=" + "'"+id+"'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
 		@SuppressWarnings("unchecked")
@@ -64,3 +69,4 @@ public class SupplierDAOImpl implements SupplierDAO {
 
 
 }
+*/

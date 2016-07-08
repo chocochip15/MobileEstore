@@ -1,4 +1,4 @@
-package com.niit.dao;
+/*package com.niit.dao;
 
 import java.util.List;
 
@@ -63,3 +63,4 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 
 }
+*/

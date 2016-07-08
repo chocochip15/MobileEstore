@@ -1,4 +1,4 @@
-package com.niit.dao;
+/*package com.niit.dao;
 
 import java.util.List;
 
@@ -11,19 +11,23 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.bean.User;
 
-@Repository("userDAO")
+@Repository("userDAOImpl")
 public class UserDAOImpl implements UserDAO {
 	
 
-	@Autowired
+
 	private SessionFactory sessionFactory;
 
-
+	@Autowired
 	public UserDAOImpl(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
 
-	@Transactional
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	
 	public List<User> list() {
 		@SuppressWarnings("unchecked")
 		List<User> list = (List<User>) sessionFactory.getCurrentSession()
@@ -60,7 +64,7 @@ public class UserDAOImpl implements UserDAO {
 		return null;
 	}
 	
-	@Transactional
+	
 	public boolean isValidUser(String id, String password, boolean isAdmin) {
 		String hql = "from User where id=" + id + " and " + " name =" + password;
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
@@ -77,3 +81,4 @@ public class UserDAOImpl implements UserDAO {
 
 
 }
+*/

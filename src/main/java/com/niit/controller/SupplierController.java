@@ -1,4 +1,4 @@
-package com.niit.controller;
+/*package com.niit.controller;
 
 import java.util.List;
 
@@ -19,6 +19,10 @@ public class SupplierController {
 	@Autowired
 	private SupplierService supplierService;
 
+	public void setSupplierService(SupplierService supplierService) {
+		this.supplierService = supplierService;
+	}
+
 	@RequestMapping("/getAllSuppliers")
 	public ModelAndView getAllSuppliers() {
 
@@ -31,4 +35,9 @@ public class SupplierController {
 
 		return mv;
 	}
+
+	public void setSupplierService(SupplierService supplierService) {
+		this.supplierService = supplierService;
+	}
 }
+*/

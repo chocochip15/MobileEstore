@@ -1,4 +1,4 @@
-package com.niit.dao;
+/*package com.niit.dao;
 import java.util.List;
 
 import com.niit.bean.Category;
@@ -8,3 +8,4 @@ public interface CategoryDAO {
     public void saveOrUpdate(Category category);
     public void delete(String id);
 }
+*/

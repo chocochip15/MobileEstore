@@ -1,16 +1,17 @@
 package com.niit.bean;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.stereotype.Component;
+
 
 @Entity
-@Table(name = "SUPPLIER")
-@Component
-public class Supplier {
+@Table(name = "Supplier")
+public class Supplier implements Serializable  {
 	
 	@Id
 	@Column(name="ID")

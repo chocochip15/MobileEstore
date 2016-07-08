@@ -4,15 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Registraion Confirmation</title>
 </head>
 <body>
-${message}
-<h4>Welcome Admin </h4> <br><br>
-
-<a href="getAllCategories"> Categories</a>  <br>
-<a href="getAllSuppliers"> Suppliers</a>   <br>
-<a href="getAllProducts"> Products</a> 
-
+<h1>Succesfull Registration</h1>
+<p>Thank you for registering yourself with us :) </p>
 </body>
 </html>
