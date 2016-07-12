@@ -10,32 +10,60 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </head>
  <body>
-  <div clas="container">
-   <div clas="row">
-    <form:form name="form1" , role="form" action="" method="post" >
+<%--   <div class="container" id="signUp">
+     
+   <div class="row">
+   
+    <form action="http://localhost:8080/MobileEstore/Registered" method="post" name="form1" role="form" >
      <div class = "form-group">
        
-      <label for = "name" action=>Enter Your Email Address:</label>
-      <input type = "text" class = "form-control" id = "usr" placeholder = "Email">
+      <label for = "name">Name</label>
+      <input type = "text" class = "form-control" id = "usr" placeholder = "Enter Email Address">
    </div>
         <div class = "form-group">
-                <label for = "Password">Passowrd:</label>
-            <input type="text" class="form-control" id="pwd" placeholder = "Password"></br>
-        
+            <label for = "password">Passowrd</label>
+            <input type="text" class="form-control" id="pwd"><br>
       </div>
-        <div class = "form-group">
-                <label for = "Phone No.">Phone NO:</label>
-            <input type="text" class="form-control" id="pwd" placeholder = "Phone NO."></br>
-        
+      <div class = "form-group">
+            <label for = "Address">Address</label>
+            <input type="text" class="form-control" id="add"><br>
       </div>
-        <div class = "form-group">
-                <label for = "Phone No.">Address:</label>
-            <input type="text" class="form-control" id="pwd" placeholder = "Address"></br>
-        
+      <div class = "form-group">
+            <label for = "Phone_NO1">Phone NO.</label>
+            <input type="text" class="form-control" id="pno1"><br>
       </div>
-        <button type="submit" class="btn btn-primary">Sign Up</button>
-       </form:form>
+      <div class = "form-group">
+            <label for = "Phone_NO2">Alternative Phone NO</label>
+            <input type="text" class="form-control" id="pno2"><br>
       </div>
-     </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+       </form>
+      </div>
+     </div> --%>
+     
+     <h1>Registration Form</h1>
+  <form:form method="post" action="http://localhost:8080/MobileEstore/Registered" modelAttribute="customerDetails"  commandName="customerDetails">
+  
+   <table>
+   <tr>
+   <td><form:label path="custName">Customer Full Name</form:label></td>
+   <td><form:input path="custName"/></td>
+   </tr>
+   
+   <tr>
+   <td><form:label path="permanent_address">Permanent Address</form:label></td>
+   <td><form:input path="permanent_address"/></td>
+   </tr>
+   
+   </table>  <tr>
+   <td><form:label path="phone_no1">Mobile Phone NO.</form:label></td>
+   <td><form:input path="phone_no1"/></td>
+   </tr><tr>
+   <td><form:label path="phone_no2">Alternative NO.</form:label></td>
+   <td><form:input path="phone_no2"/></td>
+   </tr>
+   <input type="submit"/>
+   
+   </form:form>
     </body>
 </html>

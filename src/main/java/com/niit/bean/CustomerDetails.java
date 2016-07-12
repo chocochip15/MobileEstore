@@ -1,5 +1,7 @@
 package com.niit.bean;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,10 +9,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="CUSTOMER_DETAILS")
-public class CustomerDetails {
+public class CustomerDetails implements Serializable {
+	
 	@Id
-	@Column(name="CUST_ID")
-	private String custID;
 	@Column(name="CUST_NAME")
 	private String custName;
 	@Column(name="PERMANENT_ADDRESS")
@@ -37,12 +38,7 @@ public class CustomerDetails {
 	public void setPhone_no2(String phone_no2) {
 		this.phone_no2 = phone_no2;
 	}
-	public String getCustID() {
-		return custID;
-	}
-	public void setCustID(String custID) {
-		this.custID = custID;
-	}
+	
 	public String getCustName() {
 		return custName;
 	}
@@ -52,3 +48,4 @@ public class CustomerDetails {
 	
 
 }
+		

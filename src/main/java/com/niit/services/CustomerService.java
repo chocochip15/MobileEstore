@@ -11,40 +11,24 @@ import com.niit.dao.CustDetailsDAOImpl;
 @Service
 @Transactional
 @EnableTransactionManagement
-public class CustDetailsService {
+public class CustomerService {
 
-	private CustDetailsDAOImpl custDetailsDAOImpl ;
-	
-	
+	private CustDetailsDAOImpl custDetailsDAOImpl;
 
-public void setCustDetailsDAOImpl(CustDetailsDAOImpl custDetailsDAOImpl) {
+	public void setCustDetailsDAOImpl(CustDetailsDAOImpl custDetailsDAOImpl) {
 		this.custDetailsDAOImpl = custDetailsDAOImpl;
 	}
 
-
-
-
-
-
-
-@Autowired
-	public CustDetailsService(CustDetailsDAOImpl custDetailsDAOImpl) {
+	@Autowired
+	public CustomerService(CustDetailsDAOImpl custDetailsDAOImpl) {
 		
 		this.custDetailsDAOImpl = custDetailsDAOImpl;
 	}
 
-
-
-
-
-
-	
 	public void save(CustomerDetails customerDetails) {
-		
-		 custDetailsDAOImpl.save(customerDetails);
+
+		custDetailsDAOImpl.save(customerDetails);
 
 	}
-	
-
 
 }
