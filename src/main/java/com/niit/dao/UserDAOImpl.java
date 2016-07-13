@@ -1,4 +1,4 @@
-/*package com.niit.dao;
+package com.niit.dao;
 
 import java.util.List;
 
@@ -37,7 +37,7 @@ public class UserDAOImpl implements UserDAO {
 		return list;
 	}
 
-	@Transactional
+	/*@Transactional
 	public void saveOrUpdate(User user) {
 		sessionFactory.getCurrentSession().saveOrUpdate(user);
 	}
@@ -63,10 +63,10 @@ public class UserDAOImpl implements UserDAO {
 		
 		return null;
 	}
-	
+	*/
 	
 	public boolean isValidUser(String id, String password, boolean isAdmin) {
-		String hql = "from User where id=" + id + " and " + " name =" + password;
+		String hql = "from User where USER_ID='" + id + "' and " + " USER_PASSWORD ='" + password +"'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
 		@SuppressWarnings("unchecked")
@@ -81,4 +81,3 @@ public class UserDAOImpl implements UserDAO {
 
 
 }
-*/

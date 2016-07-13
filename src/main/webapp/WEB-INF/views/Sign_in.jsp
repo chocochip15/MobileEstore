@@ -78,35 +78,24 @@
      
      
      
-  <div clas="container" id="adminsignIn">
+  
      
-   <div clas="row">
-    <form action="/Registered" method="post" name="form1" , role="form" >
-     <div class = "form-group">
-       
-      <label for = "name">Name</label>
-      <input type = "text" class = "form-control" id = "usr" placeholder = "Enter Email Address">
-   </div>
-        <div class = "form-group">
-            <label for = "password">Passowrd</label>
-            <input type="text" class="form-control" id="pwd"><br>
-      </div>
-      <div class = "form-group">
-            <label for = "Address">Address</label>
-            <input type="text" class="form-control" id="add"><br>
-      </div>
-      <div class = "form-group">
-            <label for = "Phone_NO1">Phone NO.</label>
-            <input type="text" class="form-control" id="pno1"><br>
-      </div>
-      <div class = "form-group">
-            <label for = "Phone_NO2">Alternative Phone NO</label>
-            <input type="text" class="form-control" id="pno2"><br>
-      </div>
-        <button type="submit" class="btn btn-primary">Register</button>
-       </form>
-      </div>
-     </div>
+   <form:form method="post" action="http://localhost:8080/MobileEstore/isValidUser" modelAttribute="user" commandName="user" >
+  
+   <table>
+   <tr>
+   <td><form:label path="userId">ADMIN ID</form:label></td>
+   <td><form:input path="userId"/></td>
+   </tr>
+   
+   <tr>
+   <td><form:label path="userPassword">Admin Password</form:label></td>
+   <td><form:input path="userPassword"/></td>
+   </tr>
+  </table>
+    <input type="submit"/>
+   </form:form>
+     
      
      <footer>
             <div class="container">

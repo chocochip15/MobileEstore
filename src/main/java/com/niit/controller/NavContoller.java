@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.bean.CustomerDetails;
+import com.niit.bean.User;
 @Controller
 public class NavContoller {
 	
@@ -35,9 +36,10 @@ public class NavContoller {
 				
 			}
 			@RequestMapping("/Sign_in")
-			protected ModelAndView signIn(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
-				ModelAndView modelandview=new ModelAndView("Sign_in");
+			protected ModelAndView signIn(HttpServletRequest arg0, HttpServletResponse arg1,Model m) throws Exception {
 				
+				ModelAndView modelandview=new ModelAndView("Sign_in");
+			m.addAttribute("user",new User());	
 				return modelandview;
 				
 			}

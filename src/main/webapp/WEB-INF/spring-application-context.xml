@@ -65,6 +65,15 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	<bean id="customerService" class="com.niit.services.CustomerService">
 		<property name="custDetailsDAOImpl" ref="custDetailsDAOImpl"></property>
 	</bean>
+	
+	<bean id="categoryDAOImpl" class="com.niit.dao.CategoryDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!-- Creating bean for UserService and sending DAO object to UserService -->
+	<bean id="categoryService" class="com.niit.services.CategoryService">
+		<property name="categoryDAOImpl" ref="categoryDAOImpl"></property>
+	</bean>
 
 
 	<!-- Creating bean for BlogsDAO and sending session object to UserDAO <bean 
