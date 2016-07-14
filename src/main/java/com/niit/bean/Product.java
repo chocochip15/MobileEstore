@@ -12,14 +12,25 @@ import javax.persistence.Table;
 public class Product implements Serializable {
 	@Id
 	@Column(name="PRODUCT_ID")
-	private String ProductId;
+	private String id;
 	@Column(name="PRODUCT_NAME")
-	private String ProductName;
+	private String name;
 	@Column(name="Price")
 	private String price;
 	@Column(name="Description")
-	private String Description;
-	
+	private String description;
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public String getPrice() {
 		return price;
 	}
@@ -27,23 +38,12 @@ public class Product implements Serializable {
 		this.price = price;
 	}
 	public String getDescription() {
-		return Description;
+		return description;
 	}
 	public void setDescription(String description) {
-		Description = description;
-	}
-	public String getProductId() {
-		return ProductId;
-	}
-	public void setProductId(String productId) {
-		ProductId = productId;
-	}
-	public String getProductName() {
-		return ProductName;
-	}
-	public void setProductName(String productName) {
-		ProductName = productName;
+		this.description = description;
 	}
 	
+
 
 }

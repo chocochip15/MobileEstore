@@ -20,7 +20,7 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="org.h2.Driver" />
-		<property name="url" value="jdbc:h2:~/mobileEstore" />
+		<property name="url" value="jdbc:h2:~/mobileEstore_new" />
 		<property name="username" value="sa" />
 		<property name="password" value="" />
 	</bean>
@@ -32,9 +32,8 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 		<property name="dataSource" ref="dataSource" />
 		<property name="annotatedClasses">
 			<list>
-				<value>com.niit.bean.Supplier</value>
-				<value>com.niit.bean.Category</value>
-				<value>com.niit.bean.Account</value>
+				
+				
 				<value>com.niit.bean.CustomerDetails</value>
 				<value>com.niit.bean.Product</value>
 				<value>com.niit.bean.User</value>
@@ -66,13 +65,13 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 		<property name="custDetailsDAOImpl" ref="custDetailsDAOImpl"></property>
 	</bean>
 	
-	<bean id="categoryDAOImpl" class="com.niit.dao.CategoryDAOImpl">
+	<bean id="productDAOImpl" class="com.niit.dao.ProductDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 
 	<!-- Creating bean for UserService and sending DAO object to UserService -->
-	<bean id="categoryService" class="com.niit.services.CategoryService">
-		<property name="categoryDAOImpl" ref="categoryDAOImpl"></property>
+	<bean id="productService" class="com.niit.services.ProductService">
+		<property name="productDAOImpl" ref="productDAOImpl"></property>
 	</bean>
 
 

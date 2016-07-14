@@ -1,4 +1,4 @@
-/*package com.niit.dao;
+package com.niit.dao;
 
 import java.util.List;
 
@@ -19,15 +19,20 @@ import com.niit.bean.Product;
 public class ProductDAOImpl implements ProductDAO {
 	
 
+	private SessionFactory sessionFactory;	
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+
+	
+
 	@Autowired
-	private SessionFactory sessionFactory;
-
-
 	public ProductDAOImpl(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
 
-	@Transactional
+	
 	public List<Product> list() {
 		@SuppressWarnings("unchecked")
 		List<Product> listProduct = (List<Product>) sessionFactory.getCurrentSession()
@@ -37,19 +42,19 @@ public class ProductDAOImpl implements ProductDAO {
 		return listProduct;
 	}
 
-	@Transactional
+	
 	public void saveOrUpdate(Product product) {
 		sessionFactory.getCurrentSession().saveOrUpdate(product);
 	}
 
-	@Transactional
+	
 	public void delete(String id) {
 		Product ProductToDelete = new Product();
-		ProductToDelete.setProductId(id);
+		ProductToDelete.setId(id);
 		sessionFactory.getCurrentSession().delete(ProductToDelete);
 	}
 
-	@Transactional
+	
 	public Product get(String id) {
 		String hql = "from Product where id='" + id+"'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
@@ -66,4 +71,3 @@ public class ProductDAOImpl implements ProductDAO {
 
 
 }
-*/

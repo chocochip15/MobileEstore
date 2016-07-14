@@ -1,4 +1,4 @@
-/*package com.niit.dao;
+package com.niit.dao;
 
 import java.util.List;
 
@@ -14,4 +14,3 @@ public interface ProductDAO {
 	public void delete(String id);
 
 }
-*/
