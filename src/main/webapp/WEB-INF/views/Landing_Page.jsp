@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" isELIgnored="false"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    
+    <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -12,9 +12,10 @@
         <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
         <!--First Look for the bootstrap css online if not present then use the below link-->              
-        <link rel="stylesheet" type="text/css" href=/resources/bootstrap-3.3.6-dist/css/bootstrap.min.css  >
-        <link rel="stylesheet" type="text/css" href=/resources/CSS/css_Landing_Page.css >
-  
+        <link rel="stylesheet" type="text/css" href="/resources/bootstrap-3.3.6-dist/css/bootstrap.min.css"  >
+        <%-- <c:url value="" /> --%>
+        
+  <spring:url value="/resources/CSS/css_LandingPage.css" var="css_LandingPage"/>
   <style>
     /* Remove the navbar's default rounded borders and increase the bottom margin */
     .navbar {
@@ -33,7 +34,7 @@
    
     /* Add a gray background color and some padding to the footer */
     footer {
-      background-color: #f2f2f2;
+      background-color: #f2f2f2; 
       padding: 25px;
     }
       #myCarousel
@@ -46,7 +47,7 @@
 
 <div class="jumbotron">
   <div class="container text-center">
-    <img src="E:/logo.png"><sup class="brand-tag text-xs">beta</sup><br>
+     <img class="img" src="<c:url value="/resources/imgs/logo.png" />" alt="logo.png" /><sup class="brand-tag text-xs">beta</sup><br>
     <p class="jheader">Only The orignal,fresh and trendy mobile devices for you</p>
   </div>
 </div>
@@ -63,7 +64,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="${session.getContextPath()}/MobileEstore/Products">Products</a></li>
+        <li class="active"><a href="${session.getContextPath()}/MobileEstore/products">Products</a></li>
         <li><a href="#">Deals</a></li>
         <li><a href="${session.getContextPath()}/MobileEstore/Sign_up">Sign Up</a></li>
         <li><a href="${session.getContextPath()}/MobileEstore/About_us">About Us</a></li>

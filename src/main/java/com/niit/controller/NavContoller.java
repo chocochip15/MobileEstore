@@ -44,19 +44,18 @@ public class NavContoller {
 				
 			}
 			@RequestMapping("/Sign_up")
-			protected ModelAndView signUp(HttpServletRequest arg0, HttpServletResponse arg1,Model m ) throws Exception {
-				ModelAndView modelandview=new ModelAndView("Sign_up");
-				m.addAttribute("customerDetails", new CustomerDetails());
-				return modelandview;
+			protected String signUp(HttpServletRequest arg0, HttpServletResponse arg1,Model m ) throws Exception {
+				
+				return "redirect:/Sign_upflow";
 			
 			}
-			@RequestMapping("/Products")
+			/*@RequestMapping("/Products")
 			protected ModelAndView products(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
 				ModelAndView modelandview=new ModelAndView("Products");
 				
 				return modelandview;
 				
-			}
+			}*/
 			
 
 		}

@@ -1,5 +1,7 @@
 package com.niit.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.services.ProductService;
+import com.google.gson.Gson;
 import com.niit.bean.Product;
 
 
@@ -35,13 +38,17 @@ public class ProductController {
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
 	public ModelAndView listProducts(Model model) {
 		model.addAttribute("product", new Product());
-		System.out.println("hi");
+		System.out.println("product controller");
        System.out.println(productService.list().get(0).getName());	
 		//model.addAttribute("productList", productService.list());
 		ModelAndView mv=new ModelAndView("Products");
 		mv.addObject("productList", productService.list());
-				
-		return mv;
+			
+		List<Product> list=productService.list();
+		String data=new Gson().toJson(list);
+				mv.addObject("data",data);
+				System.out.println(data);
+				return mv;
 	}
 
 	// For add and update product both
