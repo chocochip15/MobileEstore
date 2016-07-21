@@ -11,6 +11,6 @@ public interface ProductDAO {
 
 	public void saveOrUpdate(Product product);
 
-	public void delete(String id);
+	public void delete(Integer id);
 
 }

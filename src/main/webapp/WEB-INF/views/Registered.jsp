@@ -7,7 +7,9 @@
 <title>Registraion Confirmation</title>
 </head>
 <body>
+<%@include file="includes/Header.jsp" %> 
 <h1>Succesfull Registration</h1>
 <p>Thank you for registering yourself with us :) </p>
+<%@include file="includes/Footer.jsp" %> 
 </body>
 </html>

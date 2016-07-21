@@ -37,6 +37,8 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 				<value>com.niit.bean.CustomerDetails</value>
 				<value>com.niit.bean.Product</value>
 				<value>com.niit.bean.User</value>
+				<value>com.niit.bean.ProductDetails</value>
+				
 
 
 			</list>
@@ -72,6 +74,16 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	<!-- Creating bean for UserService and sending DAO object to UserService -->
 	<bean id="productService" class="com.niit.services.ProductService">
 		<property name="productDAOImpl" ref="productDAOImpl"></property>
+	</bean>
+	
+	
+	<bean id="productDetailsDAOImpl" class="com.niit.dao.ProductDetailsDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!-- Creating bean for ProductDetailsService and sending DAO object to ProductDetailsService -->
+	<bean id="productDetailsService" class="com.niit.services.ProductDetailsService">
+		<property name="productDetailsDAOImpl" ref="productDetailsDAOImpl"></property>
 	</bean>
 
 

@@ -8,13 +8,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.bean.CustomerDetails;
+import com.niit.bean.Product;
 import com.niit.bean.User;
 @Controller
 public class NavContoller {
 	
 	
 
+	@RequestMapping("/Honor5x")
+	protected ModelAndView honor5x(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
 	
+		ModelAndView modelandview=new ModelAndView("Honor_5x");
+		
+		
+		return modelandview;
+		
+	}
 		
 		
 			@RequestMapping("/")
@@ -35,10 +44,10 @@ public class NavContoller {
 				return modelandview;
 				
 			}
-			@RequestMapping("/Sign_in")
-			protected ModelAndView signIn(HttpServletRequest arg0, HttpServletResponse arg1,Model m) throws Exception {
-				
-				ModelAndView modelandview=new ModelAndView("Sign_in");
+			@RequestMapping("/Admin_login")
+			protected ModelAndView adminLogin(HttpServletRequest arg0, HttpServletResponse arg1,Model m) throws Exception {
+				System.out.println("admin page");
+				ModelAndView modelandview=new ModelAndView("Admin_login");
 			m.addAttribute("user",new User());	
 				return modelandview;
 				
@@ -57,6 +66,13 @@ public class NavContoller {
 				
 			}*/
 			
+			@RequestMapping("/Gallery")
+			protected ModelAndView gallery(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
+				ModelAndView modelandview=new ModelAndView("Honor_5x");
+				
+				return modelandview;
+				
+			}
 
 		}
 

@@ -58,9 +58,9 @@ private ProductDAOImpl productDAOImpl ;
 
 		}
        
-       public void delete(String name) {
+       public void delete(Integer id) {
 			
-    	   productDAOImpl.delete(name);
+    	   productDAOImpl.delete(id);
 
 		}
 

@@ -8,6 +8,7 @@
 <title>DETAILS CONFIRMATION</title>
 </head>
 <body>
+<%@include file="includes/Header.jsp" %> 
  <div class="content">
    <fieldset>
     <legend>Confirm Details</legend>
@@ -46,5 +47,6 @@
    </form:form>
    </fieldset>
  </div>
+ <%@include file="includes/Footer.jsp" %>
 </body>
 </html>

@@ -18,15 +18,18 @@ public class User implements Serializable
 	private String userId;
 	@Column(name="USER_PASSWORD")
 	private String userPassword;
-	@Column(name = "admin")
-	private boolean isAdmin;
+	@Column(name = "ENABLED")
+	private boolean enabled;
+	@Column(name = "ROLE")
+	private String role;
+	
+	
 	public String getUserName() {
 		return userName;
 	}
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	
 	public String getUserId() {
 		return userId;
 	}
@@ -39,13 +42,22 @@ public class User implements Serializable
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
 	
-	public boolean isAdmin() {
-		return isAdmin;
-	}
-	public void setAdmin(boolean isAdmin) {
-		this.isAdmin = isAdmin;
-	}
+
+
+
 	
 }
 

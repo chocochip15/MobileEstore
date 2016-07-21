@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -48,10 +49,12 @@ public class ProductDAOImpl implements ProductDAO {
 	}
 
 	
-	public void delete(String id) {
-		Product ProductToDelete = new Product();
-		ProductToDelete.setId(id);
-		sessionFactory.getCurrentSession().delete(ProductToDelete);
+	public void delete(Integer id) {
+		
+		Session f =sessionFactory.getCurrentSession();
+		Product p =(Product)f.load(Product.class, new Integer(id));
+		
+		f.delete(p);
 	}
 
 	

@@ -37,21 +37,10 @@ public class UserDAOImpl implements UserDAO {
 		return list;
 	}
 
-	/*@Transactional
-	public void saveOrUpdate(User user) {
-		sessionFactory.getCurrentSession().saveOrUpdate(user);
-	}
 
-	@Transactional
-	public void delete(String id) {
-		User user = new User();
-		user.setUserId(id);
-		sessionFactory.getCurrentSession().delete(user);
-	}
 
-	@Transactional
-	public User get(String id) {
-		String hql = "from User where id=" + id;
+	public User getById(String id) {
+		String hql = "from User where USER_ID=" +"'"+ id+"'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
 		@SuppressWarnings("unchecked")
@@ -63,7 +52,7 @@ public class UserDAOImpl implements UserDAO {
 		
 		return null;
 	}
-	*/
+	
 	
 	public boolean isValidUser(String id, String password, boolean isAdmin) {
 		String hql = "from User where USER_ID='" + id + "' and " + " USER_PASSWORD ='" + password +"'";

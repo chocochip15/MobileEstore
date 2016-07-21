@@ -1,0 +1,280 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page session="false"%>
+
+<head>
+<title>Product Page</title>
+<style type="text/css">
+.tg {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border-color: #ccc;
+}
+
+.tg td {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	padding: 10px 5px;
+	border-style: solid;
+	border-width: 1px;
+	overflow: hidden;
+	word-break: normal;
+	border-color: #ccc;
+	color: #333;
+	background-color: #fff;
+}
+
+.tg th {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	padding: 10px 5px;
+	border-style: solid;
+	border-width: 1px;
+	overflow: hidden;
+	word-break: normal;
+	border-color: #ccc;
+	color: #333;
+	background-color: #f0f0f0;
+}
+
+.tg .tg-4eph {
+	background-color: #f9f9f9
+}
+</style>
+</head>
+<body>
+	<%@include file="includes/Header.jsp"%>
+	<h1>Add a Product</h1>
+	<form:form
+		action="http://localhost:8080/MobileEstore/Admin/product/add"
+		modelAttribute="product" enctype="multipart/form-data"
+		commandName="product">
+		<table>
+			<tr>
+				<td><form:label path="id">
+						<spring:message text="ID" />
+					</form:label></td>
+				<c:choose>
+					<c:when test="${!empty product.id}">
+						<td><form:input path="id" disabled="true" readonly="true" />
+						</td>
+					</c:when>
+
+					<c:otherwise>
+						<td><form:input path="id" patttern=".{6,7}"
+								title="id should contains 6 to 7 characters" /></td>
+					</c:otherwise>
+				</c:choose>
+			<tr>
+				<form:input path="id" hidden="true" />
+				<td><form:label path="name">
+						<spring:message text="Name" />
+					</form:label></td>
+				<td><form:input path="name" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="price">
+						<spring:message text="price" />
+					</form:label></td>
+				<td><form:input path="price" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="description">
+						<spring:message text="Product Description" />
+					</form:label></td>
+				<td><form:input path="description" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="category">
+						<spring:message text="Product Category" />
+					</form:label></td>
+				<td><form:input path="category" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="batteryCapacity">
+						<spring:message text="Product Battery Capacity" />
+					</form:label></td>
+				<td><form:input path="batteryCapacity" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="colours">
+						<spring:message text="Product Colours" />
+					</form:label></td>
+				<td><form:input path="colours" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="dimensions">
+						<spring:message text="Product Dimensions" />
+					</form:label></td>
+				<td><form:input path="dimensions" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="expandableStorage">
+						<spring:message text="Product Expandable Storage" />
+					</form:label></td>
+				<td><form:input path="expandableStorage" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="flash">
+						<spring:message text="Product Flash" />
+					</form:label></td>
+				<td><form:input path="flash" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="frontCamera">
+						<spring:message text="Product Front Camera" />
+					</form:label></td>
+				<td><form:input path="frontCamera" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="rearCamera">
+						<spring:message text="Product Rear Camera" />
+					</form:label></td>
+				<td><form:input path="rearCamera" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="internalStorage">
+						<spring:message text="Product Internal Storage" />
+					</form:label></td>
+				<td><form:input path="internalStorage" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="operatingSystem">
+						<spring:message text="Product Operating System" />
+					</form:label></td>
+				<td><form:input path="operatingSystem" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="processor">
+						<spring:message text="Product processor" />
+					</form:label></td>
+				<td><form:input path="processor" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="ram">
+						<spring:message text="Product RAM" />
+					</form:label></td>
+				<td><form:input path="ram" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="resolution">
+						<spring:message text="Product Resolution" />
+					</form:label></td>
+				<td><form:input path="ram" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="screenSize">
+						<spring:message text="Product Screen Size" />
+					</form:label></td>
+				<td><form:input path="screenSize" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="touchScreen">
+						<spring:message text="Product Touch Screen" />
+					</form:label></td>
+				<td><form:input path="touchScreen" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="weight">
+						<spring:message text="Product Weight
+						" />
+					</form:label></td>
+				<td><form:input path="weight" required="true" /></td>
+			</tr>
+						<tr>
+				<td>
+
+					<div class="form-group">
+						<form:label path="image">
+							<spring:message text="Choose Image" />
+						</form:label>
+
+						<form:input path="image" type="file" class="form-control" />
+
+
+					</div>
+
+				</td> 
+			</tr>
+			<tr>
+				<td colspan="2"><c:if test="${!empty product.name}">
+						<input type="submit" value="<spring:message text="Edit Product"/>" />
+					</c:if> <c:if test="${empty product.name}">
+						<input type="submit" value="<spring:message text="Add Product"/>" />
+					</c:if></td>
+			</tr>
+
+
+		</table>
+	</form:form>
+	<hr />
+	<br>
+	<h3>Product List</h3>
+	<c:if test="${!empty productList}">
+		<table class="tg">
+			<tr>
+				<th width="80">Product ID</th>
+				<th width="120">Product Name</th>
+				<th width="120">Product Price</th>
+				<th width="120">Product Description</th>
+				<th width="120">Product Category</th>
+				<th width="120">Product Battery Capacity</th>
+				<th width="120">Product Colours</th>
+				<th width="120">Product Dimensions</th>
+				<th width="120">Product Expandable Storage</th>
+				<th width="120">Product Flash</th>
+				<th width="120">Product Front Camera</th>
+				<th width="120">Product Rear Camera</th>
+				<th width="120">Product Internal Storage</th>
+				<th width="120">Product Operating System</th>
+				<th width="120">Product Processor</th>
+				<th width="120">Product RAM</th>
+				<th width="120">Product Resolution</th>
+				<th width="120">Product Screen size</th>
+				<th width="120">Product Touchscreen</th>
+				<th width="120">Product Weight</th>
+
+
+
+				<th width="60">Edit</th>
+				<th width="60">Delete</th>
+			</tr>
+			<c:forEach items="${productList}" var="product">
+				<tr>
+					<td>${product.id}</td>
+					<td>${product.name}</td>
+					<td>${product.price}</td>
+					<td>${product.description}</td>
+					<td>${product.category}</td>
+					<td>${product.batteryCapacity}</td>
+					<td>${product.colours}</td>
+					<td>${product.dimensions}</td>
+					<td>${product.expandableStorage}</td>
+					<td>${product.flash}</td>
+					<td>${product.frontCamera}</td>
+					<td>${product.rearCamera}</td>
+					<td>${product.internalStorage}</td>
+					<td>${product.operatingSystem}</td>
+					<td>${product.processor}</td>
+					<td>${product.ram}</td>
+					<td>${product.resolution}</td>
+					<td>${product.screenSize}</td>
+					<td>${product.touchScreen}</td>
+					<td>${product.weight}</td>
+
+
+					<td><a
+						href="<c:url value='/Admin/product/edit/${product.id}' />">Edit</a></td>
+					<td><a
+						href="<c:url value='/Admin/product/remove/${product.id}'/>">Delete</a></td>
+				</tr>
+			</c:forEach>
+		</table>
+	</c:if>
+	<%@include file="includes/Footer.jsp"%>
+</body>
+</html>

@@ -4,15 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Admin Home</title>
 </head>
 <body>
 ${message}
-<h4>Welcome Admin </h4> <br><br>
+<h4>Welcome Admin </h4> <br>
 
-<a href="getAllCategories"> Categories</a>  <br>
-<a href="getAllSuppliers"> Suppliers</a>   <br>
-<a href="getAllProducts"> Products</a> 
+<!-- <a href="getAllCategories"> Categories</a>  <br>
+<a href="getAllSuppliers"> Suppliers</a>   <br> -->
+<a href="http://localhost:8080/MobileEstore/Admin/products">Add Products</a> 
 
 </body>
 </html>

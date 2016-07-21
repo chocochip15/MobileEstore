@@ -1,5 +1,8 @@
 package com.niit.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +27,15 @@ private	UserService userService;
 	public void setUserService(UserService userService) {
 	this.userService = userService;
 }
+	
+	@RequestMapping("/Admin/Admin_home")
+	protected String signUp(HttpServletRequest arg0, HttpServletResponse arg1,Model m ) throws Exception {
+		
+		return "Admin_home";
+	
+	}
+
+	
 @RequestMapping("/isValidUser" )
 	public ModelAndView validate(@ModelAttribute("user") User user,BindingResult result , Model m) {
 		System.out.println("in controller");
@@ -36,11 +48,11 @@ private	UserService userService;
 			 mv = new ModelAndView("Admin_home");
 		} else {
 			message = "Invalid credentials";
-			 mv = new ModelAndView("Sign_in");
+			 mv = new ModelAndView("Invalid_user");
 		}
 
 		
-		mv.addObject("message", user.getUserName());
+		mv.addObject("useName", user.getUserName());
 		mv.addObject("userId",user.getUserId());
 		// mv.addObject("password", password);
 		return mv;
