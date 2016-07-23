@@ -15,62 +15,22 @@
        <link href="<c:url value="/resources/CSS/css_Landing_Page.css" />" rel="stylesheet"/>
        <link href="<c:url value="/resources/bootstrap-3.3.6-dist/css/bootstrap.min.css"/>" rel="stylesheet"/>
        <style>
-    /* Remove the navbar's default rounded borders and increase the bottom margin */
-    .navbar {
-      margin-bottom: 50px;
-      border-radius: 0;
-    }
     
-    /* Remove the jumbotron's default bottom margin */
-     .jumbotron {
-      margin-bottom: 0px;
-         font-family:font-family: 'Indie Flower', cursive;
-    }
-      .jheader{
-          font-family: 'Indie Flower', cursive;
-      }
-      #Container_carousel
+.panel-body {
+    height : 270px;
+}
+      .Container_carousel
       {
-      align:center;
+      
+      margin-bottom: 20px;
       }
 </style>
 </head>
 <body>
 
- <%-- <%@include file="includes/Header.jsp" %>  --%>
-    <div class="jumbotron">
-  <div class="container text-center">
-     <img class="img" src="<c:url value="/resources/imgs/logo.png" />" alt="logo.png" /><sup class="brand-tag text-xs">beta</sup><br>
-    <p class="jheader">Only The orignal,fresh and trendy mobile devices for you</p>
-  </div>
-</div>
+ <%@include file="includes/Header.jsp" %>  
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="${session.getContextPath()}/MobileEstore/">Home</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="${session.getContextPath()}/MobileEstore/products">Products</a></li>
-        <li><a href="#">Deals</a></li>
-        <li><a href="${session.getContextPath()}/MobileEstore/Sign_up">Sign Up</a></li>
-        <li><a href="${session.getContextPath()}/MobileEstore/About_us">About Us</a></li>
-         <li><a href="${session.getContextPath()}/MobileEstore/Gallery">Gallery</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="${session.getContextPath()}/MobileEstore/Admin_product"><span class="glyphicon glyphicon-user"></span> Admin Login</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-   
+  
      <!--Carousel-->
 <div class="Container_carousel">        
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -112,28 +72,27 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="panel panel-primary">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+        <div class="panel-heading">Sony Xperia X Dual DEAL</div>
+        <div class="panel-body"><img class="panelImages img-responsive" src="<c:url value="/resources/imgs/Sony_Xperia_X_Dual/sony_xperia_x_dual_main.jpg"/>" width="500px" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">GET 10% Discount</div>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="panel panel-danger">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+        <div class="panel-heading">Xiaomi MI Max DEAL</div>
+        <div class="panel-body"><img class="panelImages img-responsive" src="<c:url value="/resources/imgs/Xiaomi_Mi_Max/xiaomi_mi_max_cover.jpg" />"  width="500px" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Buy MI MAX and get 5% discount</div>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="panel panel-success">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+        <div class="panel-heading">Iphone SE DEAL</div>
+        <div class="panel-body"><img class="panelImages img-responsive" src="<c:url value="/resources/imgs/I_phone_SE/apple_iphone_se_screen.jpg"/>" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Buy a iphone SE and get POWER BANK</div>
       </div>
     </div>
   </div>
 </div><br>
-
 
 
 

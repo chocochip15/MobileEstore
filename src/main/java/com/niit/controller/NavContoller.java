@@ -1,29 +1,39 @@
 package com.niit.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.bean.CustomerDetails;
 import com.niit.bean.Product;
 import com.niit.bean.User;
+import com.niit.services.CustomerService;
 @Controller
 public class NavContoller {
 	
+	private CustomerService customerService;
 	
-
-	@RequestMapping("/Honor5x")
-	protected ModelAndView honor5x(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
-	
-		ModelAndView modelandview=new ModelAndView("Honor_5x");
+	public  NavContoller(CustomerService customerService) {
 		
-		
-		return modelandview;
-		
+		this.customerService = customerService;
 	}
+
+
+@Autowired
+	public void setCustomerService(CustomerService customerService) {
+		this.customerService = customerService;
+	}
+
+
+	
 		
 		
 			@RequestMapping("/")
@@ -52,11 +62,19 @@ public class NavContoller {
 				return modelandview;
 				
 			}
-			@RequestMapping("/Sign_up")
-			protected String signUp(HttpServletRequest arg0, HttpServletResponse arg1,Model m ) throws Exception {
-				
-				return "redirect:/Sign_upflow";
 			
+			@RequestMapping(value="/Sign_up" )
+			protected ModelAndView registered(@Valid @ModelAttribute("customerDetails") CustomerDetails customerDetails , BindingResult result,Model m) {
+				ModelAndView modelandview1 = new ModelAndView("Sign_up");
+				ModelAndView modelandview2 = new ModelAndView("Registered");
+				if (result.hasErrors()) {
+					return modelandview1;
+				} else {
+					
+					customerService.save(customerDetails);
+					return modelandview2;
+				}
+
 			}
 			/*@RequestMapping("/Products")
 			protected ModelAndView products(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
@@ -66,13 +84,7 @@ public class NavContoller {
 				
 			}*/
 			
-			@RequestMapping("/Gallery")
-			protected ModelAndView gallery(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
-				ModelAndView modelandview=new ModelAndView("Honor_5x");
-				
-				return modelandview;
-				
-			}
+			
 
 		}
 

@@ -12,6 +12,7 @@ import javax.persistence.Table;
 public class User implements Serializable
 {
 	@Column(name="USER_NAME")
+	
 	private String userName;
 	@Id
 	@Column(name="USER_ID")

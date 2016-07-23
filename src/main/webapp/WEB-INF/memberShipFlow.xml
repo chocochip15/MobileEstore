@@ -7,25 +7,25 @@ http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 
 <!-- Executed when web flow is triggered -->
 <on-start>
- <evaluate expression="registrationHandler.initFlow()" result="flowScope.customerDetails"/>
+ <evaluate expression="shopingCartController.initflow()" result="flowScope.product"/>
 </on-start>
 
-<view-state id="start" view="Sign_up" model="flowScope.customerDetails">
- <transition on="submit" to="validate"/>
+<view-state id="start" view="Cart" model="flowScope.product">
+ <transition on="submit" to="confirmDetails"/>
 </view-state>
-
+<!-- 
 <action-state id="validate">
  <evaluate expression="registrationHandler.validateDetails(customerDetails,messageContext)"></evaluate>
  <transition on="success" to="confirmDetails"/>
  <transition on="failure" to="start"/>
 </action-state>
-
-<view-state id="confirmDetails" view="confirmDetails" model="flowScope.customerDetails">
+-->
+<view-state id="confirmDetails" view="ShippingDetails" model="flowScope.product">
   <transition on="edit" to="start"/>
   <transition on="submit" to="registered"/>
   </view-state>
   <end-state id="registered" view="Registered"/>
-  
+   
   <end-state id="toHome" view="externalRedirect:contextRelative:Landing_Page.jsp"/>
   
   <end-state id="toException" view="externalRedirect:contextRelative:Exception.jsp"/>   

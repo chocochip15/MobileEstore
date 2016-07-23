@@ -57,6 +57,14 @@ public class ProductDAOImpl implements ProductDAO {
 		f.delete(p);
 	}
 
+	public Product getByID(int id)
+	{
+		Session f =sessionFactory.getCurrentSession();
+		Product p =(Product)f.load(Product.class, new Integer(id));
+		
+		System.out.println(p.getName());
+		return p;
+	}
 	
 	public Product get(String id) {
 		String hql = "from Product where id='" + id+"'";

@@ -101,12 +101,13 @@ public class ProductController {
 	@RequestMapping(value = "/MoreDetails", method = RequestMethod.POST)
 	public ModelAndView moreDetails(@ModelAttribute("product") Product product, BindingResult result, Model m) {
 
-		productService.saveOrUpdate(product);
+		//productService.saveOrUpdate(product);
 		/* m.addAttribute("productList", productService.list()); */
 		m.addAttribute("product", product);
 		System.out.println(product.getName());
 		ModelAndView mv = new ModelAndView("ProductDetails");
-
+		mv.addObject("product", product);
+		System.out.println(new Gson().toJson(product));
 		return mv;
 
 	}

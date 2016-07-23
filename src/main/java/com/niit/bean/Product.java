@@ -23,7 +23,7 @@ public class Product implements Serializable {
 	@Column(name="PRODUCT_NAME")
 	private String name;
 	@Column(name="Price")
-	private String price;
+	private Integer price;
 	@Column(name="Description")
 	private String description;
 	private String category;
@@ -156,10 +156,11 @@ private	MultipartFile image;
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPrice() {
+
+	public Integer getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(Integer price) {
 		this.price = price;
 	}
 	public String getDescription() {

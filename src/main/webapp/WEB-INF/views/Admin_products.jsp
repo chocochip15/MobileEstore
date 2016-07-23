@@ -7,6 +7,14 @@
 
 <head>
 <title>Product Page</title>
+<meta  name="viewport" content="width=device-width, initial-scale=1">
+<!--Link to bootstrap css should first and then followed by link to our own css-->
+        <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+        <!--First Look for the bootstrap css online if not present then use the below link-->              
+       <link href="<c:url value='/resources/CSS/css_Landing_Page.css' />" rel="stylesheet"/>
+       <link href="<c:url value='/resources/bootstrap-3.3.6-dist/css/bootstrap.min.css'/>" rel="stylesheet"/>
+       
 <style type="text/css">
 .tg {
 	border-collapse: collapse;
@@ -55,7 +63,7 @@
 		commandName="product">
 		<table>
 			<tr>
-				<td><form:label path="id">
+				<td><form:label path="id" class="form-group">
 						<spring:message text="ID" />
 					</form:label></td>
 				<c:choose>
@@ -99,6 +107,12 @@
 						<spring:message text="Product Battery Capacity" />
 					</form:label></td>
 				<td><form:input path="batteryCapacity" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="removableBattery">
+						<spring:message text="Product Removable Battery" />
+					</form:label></td>
+				<td><form:input path="removableBattery" required="true" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="colours">
@@ -164,7 +178,7 @@
 				<td><form:label path="resolution">
 						<spring:message text="Product Resolution" />
 					</form:label></td>
-				<td><form:input path="ram" required="true" /></td>
+				<td><form:input path="resolution" required="true" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="screenSize">
@@ -202,9 +216,9 @@
 			</tr>
 			<tr>
 				<td colspan="2"><c:if test="${!empty product.name}">
-						<input type="submit" value="<spring:message text="Edit Product"/>" />
+						<input type="submit" class="btn btn-primary" value="<spring:message text="Edit Product"/>" />
 					</c:if> <c:if test="${empty product.name}">
-						<input type="submit" value="<spring:message text="Add Product"/>" />
+						<input type="submit"  class="btn btn-primary" value="<spring:message text="Add Product"/>" />
 					</c:if></td>
 			</tr>
 
@@ -223,6 +237,7 @@
 				<th width="120">Product Description</th>
 				<th width="120">Product Category</th>
 				<th width="120">Product Battery Capacity</th>
+				<th width="120">Product Removable Battery</th>
 				<th width="120">Product Colours</th>
 				<th width="120">Product Dimensions</th>
 				<th width="120">Product Expandable Storage</th>
@@ -251,6 +266,7 @@
 					<td>${product.description}</td>
 					<td>${product.category}</td>
 					<td>${product.batteryCapacity}</td>
+					<td>${product.removableBattery}</td>
 					<td>${product.colours}</td>
 					<td>${product.dimensions}</td>
 					<td>${product.expandableStorage}</td>

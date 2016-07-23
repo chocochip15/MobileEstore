@@ -7,23 +7,32 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
+
+
 @Entity
 @Table(name="CUSTOMER_DETAILS")
 public class CustomerDetails implements Serializable {
 	
 	@Id
+	@Range(min=1,max=10)
 	@Column(name = "CUST_ID",unique=true, nullable = false)
 	private Integer cust_id;
+	@NotEmpty
 	@Column(name="CUST_NAME")
 	private String custName;
+	@NotEmpty
 	@Column(name="PERMANENT_ADDRESS")
 	private String permanent_address;
+	@NotEmpty
 	@Column(name="PHONE_NO1")
 	private String phone_no1;
+	@NotEmpty
 	@Column(name="PHONE_NO2")
 	private String phone_no2;
 	
-	
+	@NotEmpty
 	@Column(name="EMAIL_ID")
 	private String email_id;
 	

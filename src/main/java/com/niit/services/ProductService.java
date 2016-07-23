@@ -58,6 +58,13 @@ private ProductDAOImpl productDAOImpl ;
 
 		}
        
+       
+       public Product getByID(int id) {
+			
+			return productDAOImpl.getByID(id);
+
+		}
+       
        public void delete(Integer id) {
 			
     	   productDAOImpl.delete(id);
