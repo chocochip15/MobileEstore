@@ -9,6 +9,7 @@
     /* Remove the jumbotron's default bottom margin */
      .jumbotron {
       margin-bottom: 0 !important;
+      width:100% !important;
          font-family:font-family: 'Indie Flower', cursive;
     }
       .jheader{
@@ -18,11 +19,11 @@
 
  
 </style>
-</head>
 
-<body>
-<div class="jumbotron ">
-  <div class="container text-center">
+
+
+<div class="jumbotron">
+  <div class="container-fluid text-center">
      <%-- <img class="img" src="<c:url value="/resources/imgs/logo.png" />" alt="logo.png" /><sup class="brand-tag text-xs">beta</sup><br> --%>
      <img class="img" src="resources/imgs/logo.png" alt="logo.png" /><sup class="brand-tag text-xs">beta</sup><br>
     <p class="jheader">Only The orignal,fresh and trendy mobile devices for you</p>

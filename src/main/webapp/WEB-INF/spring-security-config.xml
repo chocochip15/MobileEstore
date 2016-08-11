@@ -15,7 +15,8 @@
 		username-parameter="username"
 		 password-parameter="password"  
 			default-target-url="/" 
-			authentication-failure-url="/loginError" />
+			authentication-failure-url="/Invalid_user" />
+			<logout logout-success-url="/Admin_login"/>
 
 		<!-- <form-login login-page='perform_login' username-parameter="username" 
 			password-parameter="password" default-target-url="/Admin/Admin_home" authentication-failure-url="/login?authfailed" 
@@ -30,11 +31,6 @@
 				data-source-ref="dataSource"
 				users-by-username-query="select user_name,user_password,enabled from User where user_name=?"
 				authorities-by-username-query="select user_name , role from User where user_name=?" />
-
-
- 	<!-- 	<user-service>
- 		<user name="admin" password="password1" authorities="ROLE_ADMIN"/>
- 		</user-service> -->
  		</authentication-provider>
 	</authentication-manager>
 </beans:beans>

@@ -4,6 +4,8 @@
     footer {
       background-color: #f2f2f2 !important; 
       padding: 25px !important;
+      margin-top: 10px;
+      
     }
     
     </style>
@@ -12,7 +14,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-2">
-                        <h6>Copyright &copy; 2016 Niit Tranning</h6>
+                        <h6>Copyright &copy; mobileEsotre 2016</h6>
                         
                        
     

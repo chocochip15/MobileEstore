@@ -39,7 +39,7 @@
 		
 			<div class="table-responsive">
 			<form:form method="post" class="form-group" modelAttribute="customerDetails"
-					commandName="customerDetails" action="${session.getContextPath()}/MobileEstore/Sign_up">
+					commandName="customerDetails" action="${session.getContextPath()}/MobileEstore/Register">
 					<table class="table table-hover">
 					
 					    <tr>

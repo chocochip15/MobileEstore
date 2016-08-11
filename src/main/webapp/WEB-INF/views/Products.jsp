@@ -24,12 +24,20 @@
  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script> -->
  
  <script src="resources/angular-1.5.7/angular.min.js"></script>
-        <script>
+  <script>
         
         var products=angular.module('products' , [])
-        products.controller('productController', function($scope){$scope.productsjson=${data}});
+        products.controller('productController', function($scope){
+        	$scope.productsjson=${data}
+        	
+        	$scope.orderByMe = function(x){
+        		$scope.myOrderBy=x;
+        	}
+        });
+        
         
  </script>
+ 
 <body ng-app="products">
 <%@include file="includes/Header.jsp" %> 
    <div class="container">
@@ -42,13 +50,13 @@
 	    <table class="table table-hover">
 	    <tr>
 	    <th>Product Image</th>
-        <th>Product Id</th>
-        <th>Product Name</th>
-         <th>Product Price</th>
+        <th ng-click="orderByMe('id')">Product Id</th>
+        <th ng-click="orderByMe('name')">Product Name</th>
+         <th ng-click="orderByMe('price')">Product Price</th>
           <th>Product Description</th>
           <th>More Details</th>
      </tr>	
-<tr ng-repeat="product in productsjson|filter:searchKeyword">
+<tr ng-repeat="product in productsjson|filter:searchKeyword | orderBy:myOrderBy">
 	   <td><img class="imgs" src="resources/upload_images/{{product.id}}.jpg"/></td>
 	   <td>{{product.id}}</td>
 	   <td>{{product.name}}</td>

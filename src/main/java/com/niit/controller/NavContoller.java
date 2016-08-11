@@ -1,4 +1,6 @@
 package com.niit.controller;
+import java.lang.ProcessBuilder.Redirect;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -52,8 +54,8 @@ public class NavContoller {
 				ModelAndView modelandview=new ModelAndView("About_us");
 				
 				return modelandview;
-				
 			}
+			
 			@RequestMapping("/Admin_login")
 			protected ModelAndView adminLogin(HttpServletRequest arg0, HttpServletResponse arg1,Model m) throws Exception {
 				System.out.println("admin page");
@@ -63,19 +65,41 @@ public class NavContoller {
 				
 			}
 			
+			
 			@RequestMapping(value="/Sign_up" )
-			protected ModelAndView registered(@Valid @ModelAttribute("customerDetails") CustomerDetails customerDetails , BindingResult result,Model m) {
-				ModelAndView modelandview1 = new ModelAndView("Sign_up");
-				ModelAndView modelandview2 = new ModelAndView("Registered");
-				if (result.hasErrors()) {
-					return modelandview1;
-				} else {
+			protected ModelAndView signUp(@Valid @ModelAttribute("customerDetails") CustomerDetails customerDetails , BindingResult result,Model m) {
+				
+				
+				ModelAndView modelandview = new ModelAndView("Sign_up");
+					return modelandview ;
 					
+				
+			}
+			
+			@RequestMapping(value="/Register" )
+			protected ModelAndView register(@Valid @ModelAttribute("customerDetails") CustomerDetails customerDetails , BindingResult result,Model m) {
+				
+				
+				if (result.hasErrors()) {
+					
+					return new ModelAndView("redirect:/Sign_up");
+				} else {
+					ModelAndView modelandview2 = new ModelAndView("Registered");
 					customerService.save(customerDetails);
 					return modelandview2;
 				}
-
+				
 			}
+			
+			@RequestMapping("/Invalid_user")
+			protected ModelAndView invalidUser(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
+				ModelAndView modelandview=new ModelAndView("Invalid_user");
+				
+				return modelandview;
+			}
+			
+			
+			
 			/*@RequestMapping("/Products")
 			protected ModelAndView products(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
 				ModelAndView modelandview=new ModelAndView("Products");

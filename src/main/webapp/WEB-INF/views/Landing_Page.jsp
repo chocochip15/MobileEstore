@@ -12,8 +12,8 @@
         <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
         <!--First Look for the bootstrap css online if not present then use the below link-->              
-       <link href="<c:url value="/resources/CSS/css_Landing_Page.css" />" rel="stylesheet"/>
        <link href="<c:url value="/resources/bootstrap-3.3.6-dist/css/bootstrap.min.css"/>" rel="stylesheet"/>
+       <link href="<c:url value='/resources/CSS/css_Landing_Page.css'/>" rel="stylesheet"/>
        <style>
     
 .panel-body {
