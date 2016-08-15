@@ -75,7 +75,7 @@
 				<h1>Add a Product</h1>
 				<a href="<spring:url value="/j_spring_security_logout"/>">LOGOUT</a>
 				<form:form
-					action="http://localhost:8080/MobileEstore/Admin/product/add"
+					action="${session.getContextPath()}/MobileEstore/Admin/product/add"
 					modelAttribute="product" enctype="multipart/form-data"
 					commandName="product">
 					<table>

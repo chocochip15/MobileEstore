@@ -55,14 +55,7 @@ public class ProductController {
 		return mv;
 	}
 
-/*	@RequestMapping(value = "/Admin/products", method = RequestMethod.GET)
-	public String getAdminProductsPage(@ModelAttribute("product") Product product, BindingResult result, Model m) {
-		m.addAttribute("product", new Product());
-		m.addAttribute("productList", productService.list());
 
-		return "Admin_products";
-
-	}*/
 
 	// For add and update product both
 	@RequestMapping(value = "/Admin/product/add", method = RequestMethod.POST)

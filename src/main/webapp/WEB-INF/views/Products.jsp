@@ -46,6 +46,7 @@
 	   
 	  
 	   <label>Search your product:<input ng-model="searchKeyword"/></label><br/>
+	   <span class="bg-info">Click on the header (eg.Product Name , Product Id , Product Price) to sort according to that particular header</span>
 	   <div class="table-responsive">
 	    <table class="table table-hover">
 	    <tr>
