@@ -71,27 +71,33 @@
         
 <div class="container">
   <div class="row">
-    <div class="col-sm-4">
+   <div class="pannel">
+    <div class="col-xs-4">
       <div class="panel panel-primary">
         <div class="panel-heading">Sony Xperia X Dual DEAL</div>
         <div class="panel-body"><img class="panelImages img-responsive" src="<c:url value="/resources/imgs/Sony_Xperia_X_Dual/sony_xperia_x_dual_main.jpg"/>" width="500px" style="width:100%" alt="Image"></div>
         <div class="panel-footer">GET 10% Discount</div>
       </div>
     </div>
-    <div class="col-sm-4">
+    </div>
+    <div class="pannel">
+    <div class="col-xs-4">
       <div class="panel panel-danger">
         <div class="panel-heading">Xiaomi MI Max DEAL</div>
         <div class="panel-body"><img class="panelImages img-responsive" src="<c:url value="/resources/imgs/Xiaomi_Mi_Max/xiaomi_mi_max_cover.jpg" />"  width="500px" style="width:100%" alt="Image"></div>
         <div class="panel-footer">Buy MI MAX and get 5% discount</div>
       </div>
     </div>
-    <div class="col-sm-4">
+    </div>
+    <div class="pannel">
+    <div class="col-xs-4">
       <div class="panel panel-success">
         <div class="panel-heading">Iphone SE DEAL</div>
         <div class="panel-body"><img class="panelImages img-responsive" src="<c:url value="/resources/imgs/I_phone_SE/apple_iphone_se_screen.jpg"/>" style="width:100%" alt="Image"></div>
         <div class="panel-footer">Buy a iphone SE and get POWER BANK</div>
       </div>
     </div>
+  </div>
   </div>
 </div><br>
 
@@ -108,6 +114,13 @@
        <script src="<c:url value="/resources/JS/jquery-2.2.4.min.js"/>"></script>
        <!-- Loading  bootstrap.min.js file-->
         <script  src="<c:url value="/resources/bootstrap-3.3.6-dist/js/bootstrap.min.js"/>"></script>
+        <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js"></script>
+<script type="text/javascript">
+	window.sr = ScrollReveal();
+sr.reveal('.Container_carousel' , {duration:2000} );
+ sr.reveal('panel' , {duration:5000} ,1000); 
+
+</script>
         
         
 

@@ -107,8 +107,18 @@ public class NavContoller {
 				return modelandview;
 				
 			}*/
+	
 			
+			/*fallback request mapping will execute if the url request mapping does not match to any other request mapping */
+			@RequestMapping("*")
+			protected ModelAndView errorPage(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
 			
+				ModelAndView modelandview=new ModelAndView("PageNotFound");
+				
+				
+				return modelandview;
+				
+			}
 
 		}
 

@@ -63,6 +63,11 @@
        <!-- Loading  bootstrap.min.js file-->
         <script  src="<c:url value="/resources/bootstrap-3.3.6-dist/js/bootstrap.min.js"/>"></script>
   <script src="<c:url value="/resources/JS/lightbox-plus-jquery.min.js" />"></script>
+         <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js"></script>
+<script type="text/javascript">
+	window.sr = ScrollReveal();
+sr.reveal('.example-image' , {duration:2000} , 1000 );
+</script>
 
 </body>
 </html>

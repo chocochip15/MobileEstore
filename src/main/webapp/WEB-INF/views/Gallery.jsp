@@ -39,5 +39,10 @@
        <script src="<c:url value="/resources/JS/jquery-2.2.4.min.js"/>"></script>
        <!-- Loading  bootstrap.min.js file-->
         <script  src="<c:url value="/resources/bootstrap-3.3.6-dist/js/bootstrap.min.js"/>"></script>
+         <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js"></script>
+<script type="text/javascript">
+	window.sr = ScrollReveal();
+sr.reveal('.btn' , {duration:2000} , 1000 );
+</script>
 </body>
 </html>
